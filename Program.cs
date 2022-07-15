@@ -20,18 +20,15 @@ namespace _3_2_02
             string[] myWord = myString.Split(sep, StringSplitOptions.RemoveEmptyEntries);
 
             string newString = "";
-            for (int i = 0; i < myWord.Length; i++)
-            
+            for (int i = 0; i < myWord.Length; i++)            
                 if (myWord[i] != myWord[0])
-                    newString += myWord[i] + " ";
-            
+                    newString += myWord[i] + " ";            
             return newString;               
         }
         static void Main(string[] args)
         {
             string myString = "home  house  home window door .";
             Console.WriteLine(Program.Func(myString));
-
             Console.ReadKey();
         }
     }
