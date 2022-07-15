@@ -14,21 +14,26 @@ namespace _3_2_02
 {
     internal class Program
     {
-        static string Func(string myString)
+        static string SplitString(string myString)
         {
             char[] sep = { ' ', '.' };
             string[] myWord = myString.Split(sep, StringSplitOptions.RemoveEmptyEntries);
 
             string newString = "";
-            for (int i = 0; i < myWord.Length; i++)            
+            for (int i = 0; i < myWord.Length; i++)
                 if (myWord[i] != myWord[0])
-                    newString += myWord[i] + " ";            
-            return newString;               
+                    newString += myWord[i] + " ";
+            return newString;
         }
+        static void Write(string newString)
+        {
+            Console.WriteLine(SplitString(newString));
+        }
+        
         static void Main(string[] args)
         {
-            string myString = "home  house  home window door .";
-            Console.WriteLine(Program.Func(myString));
+            string myString = "дом  пол  потолок дом пол окно .";
+            Write(myString);
             Console.ReadKey();
         }
     }
