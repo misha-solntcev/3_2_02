@@ -19,10 +19,20 @@ namespace _3_2_02
             char[] sep = { ' ', '.' };
             string[] myWord = myString.Split(sep, StringSplitOptions.RemoveEmptyEntries);
 
-            string newString = "";
+            string newString = "";            
             for (int i = 0; i < myWord.Length; i++)
-                if (myWord[i] != myWord[0])
+            {                
+                Console.WriteLine($"i = {i}");
+                int count = 0;
+                for (int j = 0; j < myWord.Length; j++)
+                {
+                    Console.WriteLine($" j = {j}");
+                    if (myWord[j] == myWord[i])
+                        count++;                    
+                }
+                if (count == 1)
                     newString += myWord[i] + " ";
+            }
             return newString;
         }
         static void Write(string newString)
@@ -32,7 +42,7 @@ namespace _3_2_02
         
         static void Main(string[] args)
         {
-            string myString = "дом  пол  потолок дом пол окно .";
+            string myString = "дом пол потолок дом потолок.";
             Write(myString);
             Console.ReadKey();
         }
